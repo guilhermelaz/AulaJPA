@@ -16,12 +16,35 @@ public class VeiculoRepository {
         this.transaction = this.entityManager.getTransaction();
     }
 
-    public void create(Veiculo veiculo){
+    public Veiculo create(Veiculo veiculo){
 
         transaction.begin();
         entityManager.persist(veiculo);
         transaction.commit();
 
+        return veiculo;
     }
+
+    public Veiculo findById(Long id){
+
+        Veiculo veiculo = entityManager.find(Veiculo.class, id);
+
+        return veiculo;
+    }
+
+    public Veiculo update(Veiculo veiculo){
+
+        transaction.begin();
+
+        veiculo = entityManager.merge(veiculo);
+
+        transaction.commit();
+
+        return veiculo;
+
+    }
+
+
+
 
 }

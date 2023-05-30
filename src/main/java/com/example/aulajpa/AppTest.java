@@ -25,8 +25,16 @@ public class AppTest {
         v1.setAnoModelo(1990);
         v1.setValor(new BigDecimal("15000.00"));
 
-        repository.create(v1);
+        //repository.create(v1);
+
+        //Veiculo vf = repository.findById(2L);
+        //System.out.println(vf.getModelo() + " - " + vf.getFabricante());
+
+        v1.setCodigo(1L);
+        v1.setModelo("Saveiro");
+        v1.setAnoModelo(2023);
+
+        repository.update(v1);
 
     }
-
 }
