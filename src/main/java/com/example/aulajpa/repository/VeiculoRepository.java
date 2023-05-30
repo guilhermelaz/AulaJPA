@@ -6,6 +6,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.transaction.Transaction;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 public class VeiculoRepository {
 
     private EntityManager entityManager;
@@ -41,6 +44,34 @@ public class VeiculoRepository {
         transaction.commit();
 
         return veiculo;
+
+    }
+
+        public Veiculo remove(Veiculo veiculo){
+
+        if(veiculo == null){
+            throw new RuntimeException("Veiculo não pode ser nulo");
+        }
+
+        transaction.begin();
+
+        veiculo = entityManager.find(Veiculo.class, veiculo.getCodigo());
+
+        entityManager.remove(veiculo);
+
+        transaction.commit();
+
+        return veiculo;
+    }
+
+    public List<Veiculo> findAll(){
+
+        List<Veiculo> veiculos = entityManager.
+                createQuery("SELECT v FROM veiculos v").
+                getResultList();
+
+        return veiculos;
+
 
     }
 

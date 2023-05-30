@@ -1,5 +1,6 @@
 package com.example.aulajpa.domain.entities;
 
+import com.example.aulajpa.domain.enums.TipoCombustivel;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -25,6 +26,9 @@ public class Veiculo {
 
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal valor;
+
+    @Enumerated(value = EnumType.STRING)
+    private TipoCombustivel tipoCombustivel;
 
     public Long getCodigo() {
         return codigo;
@@ -74,6 +78,14 @@ public class Veiculo {
         this.valor = valor;
     }
 
+    public TipoCombustivel getTipoCombustivel() {
+        return tipoCombustivel;
+    }
+
+    public void setTipoCombustivel(TipoCombustivel tipoCombustivel) {
+        this.tipoCombustivel = tipoCombustivel;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -89,4 +101,16 @@ public class Veiculo {
         return codigo.hashCode();
     }
 
+    @Override
+    public String toString() {
+        return "Veiculo{" +
+                "codigo=" + codigo +
+                ", fabricante='" + fabricante + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", anoFabricacao=" + anoFabricacao +
+                ", anoModelo=" + anoModelo +
+                ", valor=" + valor +
+                ", tipoCombustivel=" + tipoCombustivel +
+                '}';
+    }
 }
