@@ -7,5 +7,4 @@ public enum TipoCombustivel {
     DIESEL,
     FLEX,
     ELETRICO;
-
 }

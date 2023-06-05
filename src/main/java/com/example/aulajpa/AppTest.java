@@ -54,11 +54,16 @@ public class AppTest {
 
  */
 
-
+        /*
         List<Veiculo> veiculos = repository.findAll();
 
         veiculos.forEach( veiculo -> {
             System.out.println(veiculo);
-        });
+        });*/
+
+        Veiculo ve = repository.findById(5L);
+
+        System.out.println(ve);
+
     }
 }
