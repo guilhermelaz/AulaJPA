@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ProprietarioRepository {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     public ProprietarioRepository(){
         this.entityManager = ConnectionFactory.getConnection();
@@ -22,13 +22,18 @@ public class ProprietarioRepository {
     public List<Proprietario> findAll(){
 
         //Query query = entityManager.createQuery("select p from Pessoa p");
+        /*
         Query query = entityManager.createNativeQuery("select * from Proprietario", Proprietario.class);
         List<Proprietario> pessoaList = query.getResultList();
 
         return pessoaList;
+        */
+
+        return null;
     }
 
-/*    public Proprietario findByEmail(String email) throws NoResultException {
+    /*
+    public Proprietario findByEmail(String email) throws NoResultException {
         return  entityManager.createQuery("SELECT p FROM Proprietario p WHERE p.email = :email", Proprietario.class)
                     .setParameter("email", email)
                     .getSingleResult();
