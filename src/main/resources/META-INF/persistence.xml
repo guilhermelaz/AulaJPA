@@ -12,7 +12,7 @@
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
             <property name="jakarta.persistence.jdbc.user" value="root" />
-            <property name="jakarta.persistence.jdbc.password" value="bancodedados" />
+            <property name="jakarta.persistence.jdbc.password" value="guilherme" />
 
             <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
             <!--
@@ -33,7 +33,7 @@
 
     </persistence-unit>
 
-    <persistence-unit name="ifpr_aula_jpa">
+    <persistence-unit name="ifpr_aula_jpa2">
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost/ifpr_aula_jpa?useSSL=false&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC" />

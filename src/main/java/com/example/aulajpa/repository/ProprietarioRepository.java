@@ -22,14 +22,12 @@ public class ProprietarioRepository {
     public List<Proprietario> findAll(){
 
         //Query query = entityManager.createQuery("select p from Pessoa p");
-        /*
-        Query query = entityManager.createNativeQuery("select * from Proprietario", Proprietario.class);
-        List<Proprietario> pessoaList = query.getResultList();
 
-        return pessoaList;
-        */
+        Query query = entityManager.createNativeQuery("select * from proprietario", Proprietario.class);
+        List<Proprietario> proprietarios = query.getResultList();
 
-        return null;
+        return proprietarios;
+
     }
 
     /*

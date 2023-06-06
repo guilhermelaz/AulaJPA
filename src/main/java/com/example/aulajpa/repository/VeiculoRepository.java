@@ -66,12 +66,7 @@ public class VeiculoRepository {
 
     public List<Veiculo> findAll(){
 
-        List<Veiculo> veiculos = entityManager.
-                createQuery("SELECT v FROM veiculos v").
-                getResultList();
-
-        return veiculos;
-
+        return entityManager.createQuery("SELECT v FROM veiculos v", Veiculo.class).getResultList();
 
     }
 
